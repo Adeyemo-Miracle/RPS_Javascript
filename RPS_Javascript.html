@@ -18,45 +18,58 @@
             Losses:0,
             Draws:0
         };
+        document.addEventListener('DOMContentLoaded', (event) => {
+            console.log('DOM fully loaded and parsed');
+        });
         function PlayGame (x){
            RandomNumber = Math.random();
-            document.querySelector('p:nth-of-type(2)').innerText = `Wins:${Scores.Wins} Losses:${Scores.Losses} Draws:${Scores.Draws}`;
+        //    alert('Alert')
         //    console.log(RandomNumber);
            if (RandomNumber >= 0 && RandomNumber < 1/3){
                 if(x === 'Rock'){
-                    console.log('Draw')
+                    alert('Draw')
+                    // console.log('Draw')
                     Scores.Draws++;
                 } else if(x === 'Paper'){
-                    console.log('Computer Choose Rock You Win!')
+                    alert('Computer Choose Rock You Win!')
+                    // console.log('Computer Choose Rock You Win!')
                     Scores.Wins++;
                 }else{
-                    console.log('Computer Choose Rock You Loose')
+                    alert('Computer Choose Rock You Loose')
+                    // console.log('Computer Choose Rock You Loose')
                     Scores.Losses++;
                 };
            }else if(RandomNumber >= 1/3 && RandomNumber < 2/3){
             if(x === 'Rock'){
-                    console.log('Computer Choose Paper You Lose!')
-                    Scores.Losses++;
+                alert('Computer Choose Paper You Lose!')
+                // console.log('Computer Choose Paper You Lose!')
+                Scores.Losses++;
                 } else if(x === 'Paper'){
-                    console.log('Draw')
+                    alert('Draw')
+                    // console.log('Draw')
                     Scores.Draws++;
                 }else{
-                    console.log('Computer Choose Paper You Win')
+                    alert('Computer Choose Paper You Win')
+                    // console.log('Computer Choose Paper You Win')
                     Scores.Wins++;
                 };
            }else{
             if(x === 'Rock'){
-                    console.log('Computer Choose Scissors You Win!')
-                    Scores.Wins++;
+                alert('Computer Choose Scissors You Win!')
+                // console.log('Computer Choose Scissors You Win!')
+                Scores.Wins++;
                 } else if(x === 'Paper'){
-                    console.log('Computer Choose Scissors You Loose!')
+                    alert('Computer Choose Scissors You Loose!')
+                    // console.log('Computer Choose Scissors You Loose!')
                     Scores.Losses++;
                 }else{
-                    console.log('Draw')
+                    alert('Draw')
+                    // console.log('Draw')
                     Scores.Draws++
                 };
            }
             console.log(`Wins:${Scores.Wins} Losses:${Scores.Losses} Draws:${Scores.Draws}`);
+            document.querySelector('p:nth-of-type(2)').innerText = `Wins:${Scores.Wins} Losses:${Scores.Losses} Draws:${Scores.Draws}`;
         }
         // console.log('Im back')
     </script>
